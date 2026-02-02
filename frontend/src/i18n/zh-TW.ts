@@ -81,6 +81,7 @@ const zhTW = {
     // 首頁
     "home.title": "歡迎使用 XUGOU",
     "home.subtitle": "簡單易用的監控平臺",
+    
     // 應用中繼資訊
     "app.title": "XUGOU",
     "app.subtitle": "輕量化監控平臺",

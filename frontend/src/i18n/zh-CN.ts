@@ -82,6 +82,7 @@ const zhCN = {
     // 首页
     "home.title": "欢迎使用 XUGOU",
     "home.subtitle": "简单易用的监控平台",
+    
     // 应用元信息
     "app.title": "XUGOU",
     "app.subtitle": "轻量化监控平台",

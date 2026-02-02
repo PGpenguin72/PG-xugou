@@ -82,6 +82,7 @@ const enUS = {
     // Home page
     "home.title": "Welcome to XUGOU",
     "home.subtitle": "A simple and easy-to-use monitoring platform",
+    
     // App meta
     "app.title": "XUGOU",
     "app.subtitle": "Lightweight Monitoring Platform",
