@@ -65,7 +65,7 @@ const StatusPageConfig = () => {
     if (user) {
       setConfig((prev) => ({
         ...prev,
-        publicUrl: `${window.location.origin}/status/public/${user.id}`,
+        publicUrl: `${window.location.origin}`,
       }));
     }
   }, [user]);

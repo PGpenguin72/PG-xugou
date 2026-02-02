@@ -30,7 +30,7 @@ const Layout = ({ children }: LayoutProps) => {
           <Container>
             <Separator color="gray" />
             <Flex justify="center" align="center" py="3" direction="column">
-              <Text size="2" color="gray">
+              <Text size="2" color="gray" className="text-center">
                 {t("footer.copyright", { year: currentYear })}
                 {isZhTW && (
                   <span className="block">

@@ -105,7 +105,7 @@ const ChannelSelector = ({
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          backgroundColor: "white",
+          backgroundColor: "var(--gray-1)",
           width: "100%",
         }}
       >
@@ -129,7 +129,7 @@ const ChannelSelector = ({
               top: `${position.top}px`,
               left: `${position.left}px`,
               width: `${position.width}px`,
-              backgroundColor: "white",
+              backgroundColor: "var(--gray-1)",
               border: "1px solid var(--gray-6)",
               borderRadius: "6px",
               boxShadow: "0 4px 16px rgba(0, 0, 0, 0.15)",
@@ -154,13 +154,13 @@ const ChannelSelector = ({
                       padding: "8px 12px",
                       cursor: "pointer",
                       borderBottom: "1px solid var(--gray-4)",
-                      backgroundColor: "white",
+                      backgroundColor: "var(--gray-1)",
                     }}
                     onMouseOver={(e) => {
                       e.currentTarget.style.backgroundColor = "var(--gray-3)";
                     }}
                     onMouseOut={(e) => {
-                      e.currentTarget.style.backgroundColor = "white";
+                      e.currentTarget.style.backgroundColor = "var(--gray-1)";
                     }}
                   >
                     <Flex justify="between" align="center" width="100%">
