@@ -71,6 +71,11 @@ const zhCN = {
     // 语言选择
     "language.zhCN": "中文",
     "language.enUS": "English",
+    "language.zhTW": "繁體中文",
+    // 主题选择
+    "theme.system": "跟随系统",
+    "theme.light": "浅色",
+    "theme.dark": "深色",
 
     // 首页
     "home.title": "欢迎使用 XUGOU",

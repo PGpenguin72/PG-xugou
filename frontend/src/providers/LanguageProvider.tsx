@@ -11,6 +11,7 @@ import { LanguageContextType } from "../types/language";
 const availableLanguages = [
   { code: "zh-CN", name: "中文" },
   { code: "en-US", name: "English" },
+  { code: "zh-TW", name: "繁體中文" },
 ];
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
@@ -21,7 +22,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [currentLanguage, setCurrentLanguage] = useState(() => {
-    return localStorage.getItem("i18nextLng") || "zh-CN";
+    return localStorage.getItem("i18nextLng") || "en-US";
   });
 
   const changeLanguage = (lang: string) => {

@@ -30,6 +30,7 @@ import { useAuth } from "../providers/AuthProvider";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "./LanguageSelector";
+import ThemeSelector from "./ThemeSelector";
 import { promptPWAInstall } from "@/utils/pwaInstallHandler";
 
 const Navbar = () => {
@@ -258,6 +259,11 @@ const Navbar = () => {
 
                   <Separator orientation="vertical" className="!h-6" />
 
+                  {/* 主题选择器 */}
+                  <ThemeSelector />
+
+                  <Separator orientation="vertical" className="!h-6" />
+
                   <DropdownMenu>
                     <DropdownMenuTrigger>
                       <Flex
@@ -329,6 +335,11 @@ const Navbar = () => {
                 <Flex gap="2" align="center">
                   {/* 语言选择器 */}
                   <LanguageSelector />
+
+                  <Separator orientation="vertical" className="!h-6" />
+
+                  {/* 主题选择器 */}
+                  <ThemeSelector />
 
                   <Separator orientation="vertical" className="!h-6" />
 

@@ -7,6 +7,7 @@ import { faRss } from "@fortawesome/free-solid-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "next-themes";
 
 interface LayoutProps {
   children: ReactNode;
@@ -15,9 +16,11 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   const currentYear = new Date().getFullYear();
   const { t } = useTranslation();
+  const { resolvedTheme } = useTheme();
+  const appearance = resolvedTheme === "dark" ? "dark" : "light";
 
   return (
-    <Theme appearance="light">
+    <Theme appearance={appearance}>
       <Flex direction="column" className="min-h-[100vh]">
         {/* 顶部导航栏 */}
         <Navbar />

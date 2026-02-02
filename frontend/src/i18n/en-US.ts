@@ -69,8 +69,13 @@ const enUS = {
     "common.default": "Default",
 
     // Language selection
-    "language.zhCN": "Chinese",
+    "language.zhCN": "Chinese (Simplified)",
     "language.enUS": "English",
+    "language.zhTW": "Chinese (Traditional)",
+    // Theme selection
+    "theme.system": "System",
+    "theme.light": "Light",
+    "theme.dark": "Dark",
 
     // Home page
     "home.title": "Welcome to XUGOU",

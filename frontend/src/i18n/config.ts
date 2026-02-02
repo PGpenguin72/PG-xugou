@@ -5,6 +5,8 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import zhCN from "./zh-CN";
 // @ts-ignore
 import enUS from "./en-US";
+// @ts-ignore
+import zhTW from "./zh-TW";
 
 i18n
   .use(LanguageDetector)
@@ -13,8 +15,10 @@ i18n
     resources: {
       "zh-CN": zhCN,
       "en-US": enUS,
+      "zh-TW": zhTW,
     },
-    fallbackLng: "zh-CN",
+    lng: "zh-TW",
+    fallbackLng: "zh-TW",
     interpolation: {
       escapeValue: false, // 不转义 React 中的值
       prefix: "{",
@@ -22,7 +26,7 @@ i18n
     },
 
     detection: {
-      order: ["localStorage", "navigator"],
+      order: ["localStorage"],
       lookupLocalStorage: "i18nextLng",
       caches: ["localStorage"],
     },

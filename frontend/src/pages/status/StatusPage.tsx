@@ -5,6 +5,7 @@ import AgentCard from "../../components/AgentCard";
 import MonitorCard from "../../components/MonitorCard";
 import AgentStatusBar from "../../components/AgentStatusBar";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "next-themes";
 import {
   Agent,
   MonitorWithDailyStatsAndStatusHistory,
@@ -36,6 +37,8 @@ const StatusPage = () => {
     MetricHistory[] | null
   >(null);
   const [cardLoading, setCardLoading] = useState(false);
+  const { resolvedTheme } = useTheme();
+  const appearance = resolvedTheme === "dark" ? "dark" : "light";
 
   // 从API获取数据
   useEffect(() => {
@@ -107,7 +110,7 @@ const StatusPage = () => {
   // 错误显示
   if (error) {
     return (
-      <Theme appearance="light">
+      <Theme appearance={appearance}>
         <Box>
           <div className="page-container">
             <Flex justify="center" align="center">
@@ -121,7 +124,7 @@ const StatusPage = () => {
 
   if (loading) {
     return (
-      <Theme appearance="light">
+      <Theme appearance={appearance}>
         <Box>
           <div className="page-container">
             <Flex justify="center" align="center">
@@ -134,7 +137,7 @@ const StatusPage = () => {
   }
 
   return (
-    <Theme appearance="light">
+    <Theme appearance={appearance}>
       <Box>
         <div className="page-container sm:px-6 lg:px-[8%] px-4">
           {/* 状态页标题区域 */}
