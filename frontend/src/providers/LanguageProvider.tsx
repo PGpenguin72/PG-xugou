@@ -9,9 +9,9 @@ import i18n from "../i18n/config";
 import { LanguageContextType } from "../types/language";
 
 const availableLanguages = [
+  { code: "zh-TW", name: "繁體中文" },
   { code: "zh-CN", name: "中文" },
   { code: "en-US", name: "English" },
-  { code: "zh-TW", name: "繁體中文" },
 ];
 
 const LanguageContext = createContext<LanguageContextType | undefined>(

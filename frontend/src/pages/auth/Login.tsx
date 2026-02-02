@@ -100,7 +100,7 @@ const Login = () => {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   required
-                  className="text-gray-900"
+                  className="text-foreground placeholder:text-muted-foreground"
                 />
                 <Input
                   placeholder={t("login.password")}
@@ -108,7 +108,7 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="text-gray-900"
+                  className="text-foreground placeholder:text-muted-foreground"
                 />
 
                 <Button type="submit" disabled={isLoading}>

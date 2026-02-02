@@ -16,6 +16,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { Line } from "react-chartjs-2";
 import { MetricHistory, MetricType } from "../types";
+import { useTheme } from "next-themes";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -109,6 +110,8 @@ const MetricsChart: React.FC<MetricsChartProps> = ({
 }) => {
   const { t } = useTranslation();
   const chartRef = useRef<ChartJS<"line">>(null);
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
 
   // 获取磁盘和网络设备列表并管理选中的设备
   const [availableDiskDevices, setAvailableDiskDevices] = useState<
@@ -275,8 +278,12 @@ const MetricsChart: React.FC<MetricsChartProps> = ({
               "agent.metrics.load.title"
             )}`,
             unit: "",
-            color: "rgba(34, 33, 32, 0.8)",
-            bgColor: "rgba(255, 159, 64, 0.1)",
+            color: isDark
+              ? "rgba(255, 255, 255, 0.9)"
+              : "rgba(34, 33, 32, 0.8)",
+            bgColor: isDark
+              ? "rgba(255, 255, 255, 0.12)"
+              : "rgba(255, 159, 64, 0.1)",
           };
         default:
           return {
@@ -287,7 +294,7 @@ const MetricsChart: React.FC<MetricsChartProps> = ({
           };
       }
     },
-    [t, loadType, selectedNetworkMetric]
+    [t, loadType, selectedNetworkMetric, isDark]
   );
 
   // 根据指标类型获取数据点的显示格式

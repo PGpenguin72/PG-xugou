@@ -361,7 +361,7 @@ const StatusPageConfig = () => {
                       return (
                         <Flex
                           key={monitor.id}
-                          className="items-center justify-between p-2 hover:bg-gray-50 rounded-md"
+                          className="items-center justify-between p-2 hover:bg-gray-50 dark:hover:bg-gray-800/60 rounded-md"
                         >
                           <Text>{monitor.name}</Text>
                           <Checkbox
@@ -409,7 +409,7 @@ const StatusPageConfig = () => {
                       return (
                         <Flex
                           key={agent.id}
-                          className="items-center justify-between p-2 hover:bg-gray-50 rounded-md"
+                          className="items-center justify-between p-2 hover:bg-gray-50 dark:hover:bg-gray-800/60 rounded-md"
                         >
                           <Text size="3">{agent.name}</Text>
                           <Checkbox

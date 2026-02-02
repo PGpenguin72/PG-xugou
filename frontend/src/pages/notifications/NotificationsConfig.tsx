@@ -1442,7 +1442,7 @@ const NotificationsConfig = () => {
               </Select>
             </Box>
 
-            <Card className="p-4 bg-gray-50">
+            <Card className="p-4 bg-gray-50 dark:bg-gray-900/40 dark:border-gray-800">
               <Flex direction="column" gap="4">
                 {channelForm.type === "telegram" && (
                   <>

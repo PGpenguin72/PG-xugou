@@ -410,22 +410,35 @@ const ResponseTimeChart: React.FC<ResponseTimeChartProps> = ({
       pointHitRadii.push(20);
     });
 
+    const latestStatus =
+      responseTimeData.length > 0
+        ? responseTimeData[responseTimeData.length - 1].status
+        : "up";
+    const lineColor =
+      latestStatus === "down"
+        ? "rgba(239, 68, 68, 0.9)"
+        : "rgba(34, 197, 94, 0.9)";
+    const lineBgColor =
+      latestStatus === "down"
+        ? "rgba(239, 68, 68, 0.15)"
+        : "rgba(34, 197, 94, 0.15)";
+
     // 返回处理后的数据
     return {
       chartData: {
         datasets: [
           {
             data: responseTimeData,
-            borderColor: "rgba(128, 128, 128, 0.8)",
+            borderColor: lineColor,
             borderWidth: 2,
-            backgroundColor: "rgba(128, 128, 128, 0.1)",
+            backgroundColor: lineBgColor,
             pointBackgroundColor: pointBackgroundColors,
             pointBorderColor: pointBorderColors,
             pointRadius: pointRadii,
             tension: 0.4,
             pointHoverRadius: 5,
-            pointHoverBackgroundColor: "rgba(128, 128, 128, 0.7)",
-            pointHoverBorderColor: "rgba(128, 128, 128, 0.9)",
+            pointHoverBackgroundColor: lineColor,
+            pointHoverBorderColor: lineColor,
             pointHoverBorderWidth: 2,
             pointHitRadius: pointHitRadii,
           },

@@ -1,11 +1,7 @@
 import { ReactNode } from "react";
 import { Box, Flex, Text, Container, Theme } from "@radix-ui/themes";
-import { Separator, Button, Toaster } from "./ui";
+import { Separator, Toaster } from "./ui";
 import Navbar from "./Navbar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRss } from "@fortawesome/free-solid-svg-icons";
-import { faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "next-themes";
 
@@ -15,7 +11,8 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   const currentYear = new Date().getFullYear();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isZhTW = i18n.language?.startsWith("zh-TW");
   const { resolvedTheme } = useTheme();
   const appearance = resolvedTheme === "dark" ? "dark" : "light";
 
@@ -35,39 +32,21 @@ const Layout = ({ children }: LayoutProps) => {
             <Flex justify="center" align="center" py="3" direction="column">
               <Text size="2" color="gray">
                 {t("footer.copyright", { year: currentYear })}
+                {isZhTW && (
+                  <>
+                    {" "}
+                    繁體中文翻譯提供者：
+                    <a
+                      href="https://pg72.tw"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[color:var(--accent-9)] hover:underline"
+                    >
+                      PGpenguin72
+                    </a>
+                  </>
+                )}
               </Text>
-              <Flex gap="3" mt="2" direction={{ initial: "column", sm: "row" }}>
-                <Button variant="link" asChild>
-                  <a
-                    href="https://ajielu.vercel.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FontAwesomeIcon icon={faRss} size="lg" />
-                    <Text size="2">{t("footer.blog")}</Text>
-                  </a>
-                </Button>
-                <Button variant="link" asChild>
-                  <a
-                    href="https://www.youtube.com/@zaunist"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FontAwesomeIcon icon={faYoutube} size="lg" />
-                    <Text size="2">{t("footer.youtube")}</Text>
-                  </a>
-                </Button>
-                <Button variant="link" asChild>
-                  <a
-                    href="https://mail.mdzz.uk"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FontAwesomeIcon icon={faEnvelope} size="lg" />
-                    <Text size="2">{t("footer.tempMail")}</Text>
-                  </a>
-                </Button>
-              </Flex>
             </Flex>
           </Container>
         </Box>

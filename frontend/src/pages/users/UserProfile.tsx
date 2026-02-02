@@ -146,7 +146,7 @@ const UserProfile = () => {
                 />
               </Flex>
 
-              <Button type="submit" disabled={isProfileLoading}>
+              <Button type="submit" variant="secondary" disabled={isProfileLoading}>
                 {isProfileLoading
                   ? t("common.savingChanges")
                   : t("profile.update")}
@@ -207,7 +207,7 @@ const UserProfile = () => {
                 />
               </Flex>
 
-              <Button type="submit" disabled={isPasswordLoading}>
+              <Button type="submit" variant="secondary" disabled={isPasswordLoading}>
                 {isPasswordLoading
                   ? t("common.savingChanges")
                   : t("profile.changePasswordButton")}
