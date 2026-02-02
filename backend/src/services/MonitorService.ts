@@ -43,13 +43,20 @@ export async function checkMonitor(monitor: models.Monitor) {
       } catch (e) {
         // header 解析失败忽略
       }
+    } else if (
+      monitor.headers &&
+      typeof monitor.headers === "object" &&
+      !Array.isArray(monitor.headers)
+    ) {
+      headers = new Headers(monitor.headers);
     }
 
     // 发送请求
+    const method = (monitor.method || "GET").toUpperCase();
     response = await fetch(monitor.url, {
-      method: monitor.method || "GET",
+      method: method,
       headers: headers,
-      body: monitor.method !== "GET" && monitor.method !== "HEAD" ? monitor.body || "" : undefined,
+      body: method !== "GET" && method !== "HEAD" ? monitor.body || "" : undefined,
       signal: controller.signal,
     });
 
