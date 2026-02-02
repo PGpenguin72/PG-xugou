@@ -176,7 +176,7 @@ const StatusPageConfig = () => {
   const handlePreview = () => {
     // 在新标签页中打开状态页
     if (user) {
-      window.open(`/status/public/${user.id}`, "_blank");
+      window.open(`/`, "_blank");
     }
   };
 
