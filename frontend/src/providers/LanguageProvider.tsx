@@ -22,7 +22,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [currentLanguage, setCurrentLanguage] = useState(() => {
-    return localStorage.getItem("i18nextLng") || "en-US";
+    return localStorage.getItem("i18nextLng") || i18n.language || "en-US";
   });
 
   const changeLanguage = (lang: string) => {
@@ -34,6 +34,8 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
     const savedLang = localStorage.getItem("i18nextLng");
     if (savedLang) {
       setCurrentLanguage(savedLang);
+    } else if (i18n.language) {
+      setCurrentLanguage(i18n.language);
     }
   }, []);
 

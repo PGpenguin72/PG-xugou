@@ -33,6 +33,7 @@ const Layout = ({ children }: LayoutProps) => {
               <Text size="2" color="gray">
                 {t("footer.copyright", { year: currentYear })}
                 {isZhTW && (
+                  <br>
                   <>
                     {" "}
                     繁體中文翻譯提供者：
@@ -45,6 +46,7 @@ const Layout = ({ children }: LayoutProps) => {
                       PGpenguin72
                     </a>
                   </>
+                  </br>
                 )}
               </Text>
             </Flex>

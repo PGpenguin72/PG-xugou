@@ -19,15 +19,18 @@ const LanguageSelector: React.FC = () => {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>
+      <DropdownMenuTrigger aria-label={t("languageSelector.label")}>
         <Flex
           align="center"
           gap="1"
           className="inline-flex items-center justify-center rounded-md px-3 py-2 text-sm hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
         >
-          <GlobeIcon width="14" height="14" />
+          <GlobeIcon width="14" height="14" className="text-foreground" />
           <Text size="2" className="hidden sm:block">
             {currentLanguageLabel}
+          </Text>
+          <Text size="2" className="sr-only">
+            {t("languageSelector.label")}
           </Text>
         </Flex>
       </DropdownMenuTrigger>
@@ -43,9 +46,12 @@ const LanguageSelector: React.FC = () => {
               justify="between"
               style={{ width: "100%" }}
             >
-              <Text size="2">
-                {t(`language.${lang.code.replace("-", "")}`)}
-              </Text>
+              <Flex gap="2" align="center">
+                <GlobeIcon width="14" height="14" className="text-foreground" />
+                <Text size="2">
+                  {t(`language.${lang.code.replace("-", "")}`)}
+                </Text>
+              </Flex>
               {currentLanguage === lang.code && (
                 <CheckIcon width="14" height="14" />
               )}

@@ -17,8 +17,7 @@ i18n
       "en-US": enUS,
       "zh-TW": zhTW,
     },
-    lng: "zh-TW",
-    fallbackLng: "zh-TW",
+    fallbackLng: "en-US",
     interpolation: {
       escapeValue: false, // 不转义 React 中的值
       prefix: "{",
@@ -26,7 +25,7 @@ i18n
     },
 
     detection: {
-      order: ["localStorage"],
+      order: ["localStorage", "navigator"],
       lookupLocalStorage: "i18nextLng",
       caches: ["localStorage"],
     },

@@ -70,8 +70,9 @@ const zhCN = {
 
     // 语言选择
     "language.zhTW": "繁體中文",
-    "language.zhCN": "简体中文",
+    "language.zhCN": "中文",
     "language.enUS": "English",
+    "languageSelector.label": "语言",
     
     // 主题选择
     "theme.system": "跟随系统",
@@ -81,6 +82,9 @@ const zhCN = {
     // 首页
     "home.title": "欢迎使用 XUGOU",
     "home.subtitle": "简单易用的监控平台",
+    // 应用元信息
+    "app.title": "XUGOU",
+    "app.subtitle": "轻量化监控平台",
     "home.getStarted": "开始使用",
     "home.learnMore": "了解更多",
     "home.features.title": "功能特点",

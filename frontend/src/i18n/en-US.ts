@@ -72,6 +72,7 @@ const enUS = {
     "language.zhTW": "Chinese (Traditional)",
     "language.zhCN": "Chinese (Simplified)",
     "language.enUS": "English",
+    "languageSelector.label": "Language",
     
     // Theme selection
     "theme.system": "System",
@@ -81,6 +82,9 @@ const enUS = {
     // Home page
     "home.title": "Welcome to XUGOU",
     "home.subtitle": "A simple and easy-to-use monitoring platform",
+    // App meta
+    "app.title": "XUGOU",
+    "app.subtitle": "Lightweight Monitoring Platform",
     "home.getStarted": "Get Started",
     "home.learnMore": "Learn More",
     "home.features.title": "Features",

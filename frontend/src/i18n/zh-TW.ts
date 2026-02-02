@@ -71,6 +71,7 @@ const zhTW = {
     "language.zhTW": "繁體中文",
     "language.zhCN": "簡體中文",
     "language.enUS": "English",
+    "languageSelector.label": "語言",
 
     // 主題選擇
     "theme.system": "跟隨系統",
@@ -80,6 +81,9 @@ const zhTW = {
     // 首頁
     "home.title": "歡迎使用 XUGOU",
     "home.subtitle": "簡單易用的監控平臺",
+    // 應用中繼資訊
+    "app.title": "XUGOU",
+    "app.subtitle": "輕量化監控平臺",
     "home.getStarted": "開始使用",
     "home.learnMore": "瞭解更多",
     "home.features.title": "功能特點",

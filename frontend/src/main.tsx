@@ -4,6 +4,7 @@ import { RouterProvider } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import { AuthProvider } from "./providers/AuthProvider";
 import { LanguageProvider } from "./providers/LanguageProvider";
+import DocumentMeta from "./components/DocumentMeta";
 import "@radix-ui/themes/styles.css";
 import "./styles/global.css";
 import "./i18n/config";
@@ -22,6 +23,7 @@ createRoot(document.getElementById("root")!).render(
     >
       <AuthProvider>
         <LanguageProvider>
+          <DocumentMeta />
           <RouterProvider router={router} />
         </LanguageProvider>
       </AuthProvider>
