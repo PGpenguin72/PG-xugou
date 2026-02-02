@@ -246,6 +246,14 @@ const publicRoutes: RouteObject[] = [
     path: "/",
     element: (
       <Suspense fallback={<div>加载中...</div>}>
+        <StatusPage userIdOverride="1" />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/home",
+    element: (
+      <Suspense fallback={<div>加载中...</div>}>
         <Home />
       </Suspense>
     ),

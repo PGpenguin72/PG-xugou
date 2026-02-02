@@ -68,10 +68,10 @@ const zhTW = {
     "common.default": "默認",
 
     // 語言選擇
+    "language.zhTW": "繁體中文",
     "language.zhCN": "簡體中文",
     "language.enUS": "English",
-    "language.zhTW": "繁體中文",
-    
+
     // 主題選擇
     "theme.system": "跟隨系統",
     "theme.light": "淺色",

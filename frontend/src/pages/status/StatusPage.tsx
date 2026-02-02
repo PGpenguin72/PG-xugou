@@ -15,9 +15,14 @@ import {
 import { getLatestAgentMetrics, getAgentMetrics } from "../../api/agents";
 import { useParams } from "react-router-dom";
 
-const StatusPage = () => {
+interface StatusPageProps {
+  userIdOverride?: string;
+}
+
+const StatusPage = ({ userIdOverride }: StatusPageProps) => {
   const { t } = useTranslation();
   const { userId } = useParams<{ userId: string }>();
+  const effectiveUserId = userIdOverride || userId;
   const [data, setData] = useState<{
     monitors: MonitorWithDailyStatsAndStatusHistory[];
     agents: AgentWithLatestMetrics[];
@@ -42,7 +47,7 @@ const StatusPage = () => {
 
   // 从API获取数据
   useEffect(() => {
-    if (userId) {
+    if (effectiveUserId) {
       fetchData();
       // 设置定时刷新，每3分钟更新数据
       const intervalId = setInterval(() => {
@@ -50,13 +55,13 @@ const StatusPage = () => {
       }, 180000);
       return () => clearInterval(intervalId);
     }
-  }, [userId]);
+  }, [effectiveUserId]);
 
   // 获取数据
   const fetchData = async () => {
-    if (!userId) return;
+    if (!effectiveUserId) return;
     setLoading(true);
-    const response = await getStatusPageData(parseInt(userId, 10));
+    const response = await getStatusPageData(parseInt(effectiveUserId, 10));
     if (response) {
       setPageTitle(response.title || t("statusPage.title"));
       setPageDescription(

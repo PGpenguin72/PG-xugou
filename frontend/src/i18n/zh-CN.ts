@@ -69,9 +69,10 @@ const zhCN = {
     "common.default": "默认",
 
     // 语言选择
-    "language.zhCN": "中文",
-    "language.enUS": "English",
     "language.zhTW": "繁體中文",
+    "language.zhCN": "简体中文",
+    "language.enUS": "English",
+    
     // 主题选择
     "theme.system": "跟随系统",
     "theme.light": "浅色",

@@ -69,9 +69,10 @@ const enUS = {
     "common.default": "Default",
 
     // Language selection
+    "language.zhTW": "Chinese (Traditional)",
     "language.zhCN": "Chinese (Simplified)",
     "language.enUS": "English",
-    "language.zhTW": "Chinese (Traditional)",
+    
     // Theme selection
     "theme.system": "System",
     "theme.light": "Light",
