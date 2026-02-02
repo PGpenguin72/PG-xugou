@@ -33,9 +33,7 @@ const Layout = ({ children }: LayoutProps) => {
               <Text size="2" color="gray">
                 {t("footer.copyright", { year: currentYear })}
                 {isZhTW && (
-                  <br>
-                  <>
-                    {" "}
+                  <span className="block">
                     繁體中文翻譯提供者：
                     <a
                       href="https://pg72.tw"
@@ -45,8 +43,7 @@ const Layout = ({ children }: LayoutProps) => {
                     >
                       PGpenguin72
                     </a>
-                  </>
-                  </br>
+                  </span>
                 )}
               </Text>
             </Flex>
